@@ -1,0 +1,73 @@
+{
+  "repo": "harbor-chain-nonce-mark",
+  "language": "C",
+  "category": "Blockchain tooling",
+  "goal": "Implement a C blockchain tooling project for nonce resource planning, using capacity fixtures and allocation and spill reports.",
+  "review_model": {
+    "terms": [
+      "event finality",
+      "nonce pressure",
+      "settlement risk",
+      "proof depth"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "event finality",
+      "signal": 69,
+      "slack": 36,
+      "drag": 23,
+      "confidence": 63,
+      "score": 168,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "nonce pressure",
+      "signal": 82,
+      "slack": 49,
+      "drag": 20,
+      "confidence": 49,
+      "score": 202,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "settlement risk",
+      "signal": 50,
+      "slack": 21,
+      "drag": 21,
+      "confidence": 58,
+      "score": 116,
+      "lane": "watch"
+    },
+    {
+      "name": "recovery",
+      "focus": "proof depth",
+      "signal": 85,
+      "slack": 46,
+      "drag": 19,
+      "confidence": 85,
+      "score": 244,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "event finality",
+      "signal": 61,
+      "slack": 47,
+      "drag": 29,
+      "confidence": 67,
+      "score": 149,
+      "lane": "ship"
+    }
+  ]
+}
